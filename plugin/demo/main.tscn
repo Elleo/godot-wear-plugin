@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cg3hylang5fxn"]
+
+[ext_resource type="Script" uid="uid://d25jwt6qd0blf" path="res://main.gd" id="1_j0gfq"]
+
+[node name="Main" type="Node2D" unique_id=725273971]
+script = ExtResource("1_j0gfq")
+
+[node name="DetectButton" type="Button" parent="." unique_id=1512590215]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 106.0
+offset_top = 256.0
+offset_right = 345.0
+offset_bottom = 318.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "Detect WearOS"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="." unique_id=1938116258]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(300, 200)
+offset_left = 88.0
+offset_top = 100.0
+offset_right = 388.0
+offset_bottom = 193.0
+theme_override_font_sizes/font_size = 32
+text = "Press the button to detect device"
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="AODButton" type="CheckButton" parent="." unique_id=406199210]
+offset_left = 87.0
+offset_top = 349.0
+offset_right = 393.0
+offset_bottom = 402.0
+theme_override_font_sizes/font_size = 28
+text = "Always On Display"
+
+[connection signal="pressed" from="DetectButton" to="." method="_on_detect_button_pressed"]
+[connection signal="toggled" from="AODButton" to="." method="_on_aod_button_toggled"]

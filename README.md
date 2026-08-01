@@ -10,7 +10,7 @@ WearOS is just a modified version of Android, as such a game exported using the 
 
 The `isWear()` function will report if your game is currently running on a watch or not. This makes it easier to create games for multiple different form factors.
 
-### Always-On-Display
+### Always-On-Display [NOT COMPLETE]
 
 The plugin implements an AOD handler, which will report to your game when AOD mode is entered. This allows you to reduce your battery consumption. It is recommended that when the AOD mode is activated your game should have no more than 15% of the display's pixels lit.
 

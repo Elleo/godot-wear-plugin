@@ -12,7 +12,7 @@ The `isWear()` function will report if your game is currently running on a watch
 
 ### Ambient Mode
 
-The plugin implements an ambient mode handler, which will report to your game when ambient mode is entered. This allows you to reduce your battery consumption. It is recommended that when the ambient mode is activated your game should have no more than 15% of the display's pixels lit.
+The plugin implements an ambient mode handler, which will report to your game when ambient mode is entered. This allows you to keep control of the display whilst reduce your battery consumption if the user isn't actively interacting with your game. It is recommended that when the ambient mode is activated your game should have no more than 15% of the display's pixels lit.
 
 Use the `installAmbientHandler()` method to enable this, and then use `isAmbient()` to determine if your game is currently in ambient mode or not.
 

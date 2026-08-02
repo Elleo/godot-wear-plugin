@@ -16,14 +16,22 @@ func _on_detect_button_pressed():
 		else:
 			%Label.text = "I'm not running on WearOS!"
 	else:
-		$Label.text = "I'm not running on Android at all!"	
+		$Label.text = "I'm not running on Android at all!"
 
+func _process(delta: float) -> void:
+	if _wear_plugin:		
+		if _wear_plugin.isAmbient():
+			# Reduce framerate when in Ambient mode
+			Engine.max_fps = 1
+			# Hide most of the display (no more than 15% of pixels should be lit for good battery life)
+			%AmbientCover.visible = true
+		else:
+			Engine.max_fps = 30
+			%AmbientCover.visible =false
 
-func _on_aod_button_toggled(toggled_on: bool) -> void:
+func _on_ambient_button_pressed() -> void:
 	if not _wear_plugin:
 		return
-		
-	if toggled_on:
-		_wear_plugin.enabledAOD()
-	else:
-		_wear_plugin.disableAOD()
+	
+	_wear_plugin.installAmbientHandler()
+	%AmbientButton.disabled = true

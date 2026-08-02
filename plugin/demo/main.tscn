@@ -33,13 +33,30 @@ horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="AODButton" type="CheckButton" parent="." unique_id=406199210]
-offset_left = 87.0
-offset_top = 349.0
-offset_right = 393.0
+[node name="AmbientButton" type="Button" parent="." unique_id=1151854000]
+unique_name_in_owner = true
+offset_left = 57.0
+offset_top = 339.0
+offset_right = 403.0
 offset_bottom = 402.0
 theme_override_font_sizes/font_size = 28
-text = "Always On Display"
+text = "Install Ambient Handler"
+
+[node name="AmbientCover" type="Polygon2D" parent="." unique_id=1116797987]
+unique_name_in_owner = true
+visible = false
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-2, -1, 542, -5, 527, 514, -11, 512)
+
+[node name="Label" type="Label" parent="AmbientCover" unique_id=1712214499]
+offset_left = 70.0
+offset_top = 204.0
+offset_right = 385.0
+offset_bottom = 243.0
+theme_override_font_sizes/font_size = 28
+text = "Ambient Mode Enabled"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="DetectButton" to="." method="_on_detect_button_pressed"]
-[connection signal="toggled" from="AODButton" to="." method="_on_aod_button_toggled"]
+[connection signal="pressed" from="AmbientButton" to="." method="_on_ambient_button_pressed"]
